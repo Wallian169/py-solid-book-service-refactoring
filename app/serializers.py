@@ -1,5 +1,6 @@
 import json
 import xml.etree.ElementTree as ElTree
+
 from app.models import Book
 
 
@@ -27,5 +28,4 @@ class Serializer:
             return JsonSerializer.serialize(book)
         elif serialize_type == "xml":
             return XmlSerializer.serialize(book)
-        else:
-            raise ValueError(f"Unknown serialize type: {serialize_type}")
+        raise ValueError(f"Unknown serialize type: {serialize_type}")
